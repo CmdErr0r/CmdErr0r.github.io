@@ -3,19 +3,22 @@
   <head>
     <style>
       *{color:#fff}
-      body{background:#000; height:100vh}
-      
+      body{background:#000; height:100vh; margin:0}
       .page{margin:0; display:none;}
       .active{display:"block"}
 
       .go{
         width:50vw;
-        height:100wh;
+        height:100vh;
         display:block;
-        position:absoulte;
+        position:absolute;
         z-index:100;
         background:#fffa;
+        cursor: cell;
       }
+      #goright{right:0}
+      #goleft{right:0}
+      
     </style>
   </head>
   <body>
@@ -60,7 +63,6 @@
         const goright = document.getElementByid("goright");
         let index = 0
 
-        
       </script>
   </body>
 </html>
