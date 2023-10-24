@@ -80,10 +80,12 @@ function addEdition(num) {
   root.children[index].classList.add("active");
 }
 
-// Add click event listeners to the buttons.
+// Add a click event listener to the goLeft div.
 goLeft.addEventListener("click", () => {
   addEdition(-1);
 });
+
+// Add a click event listener to the goRight div.
 goRight.addEventListener("click", () => {
   addEdition(1);
 });
