@@ -3,11 +3,12 @@
   <head>
     <style>
       *{color:#fff}
+      body{background:#000}
       [class|="page"]{backcolor:#d01}
     </style>
   </head>
   <body>
-    <div class="page-1">
+    <div class="page">
         <h1>Vincent van Gogh: Bir Yaşam, Bir Sanat</h1>
         <p>Vincent van Gogh, 30 Mart 1853'te Hollanda'nın güneyinde bulunan Groot-Zundert kasabasında doğdu. Bölge papazı Theodorus van Gogh ile Anna Cornelia'nın altı çocuğundan ilkiydi. Vincent, doğumundan bir yıl önce ölü doğan kardeşinin adını almıştı.</p>
         <p>Van Gogh çocukken ciddi, sessiz ve saygılıydı ayrıca resim de yapmaktaydı. Gençliğinde sanat simsarı olarak çalıştı ancak Londra'ya gönderildikten sonra bunalıma girdi. Döndükten sonra Belçika'nın güneyinde Protestant misyoner olarak çalıştı. Ancak bu deneyimi de başarısız oldu.</p>
@@ -16,12 +17,12 @@
         <P>Van Gogh'un hayatı, ruhsal sorunları ve maddi sıkıntılar nedeniyle oldukça çalkantılıydı. 27 Temmuz 1890'da, Fransa'nın Auvers-sur-Oise kasabasında kendini vurarak intihar etti.</P>
         <P>Van Gogh, yaşamı boyunca sadece bir tablosunu satabildi. Ancak ölümünden sonra, eserleri dünya çapında büyük bir üne kavuştu. Bugün, Van Gogh, modern sanatın en önemli isimlerinden biri olarak kabul edilmektedir.</P>
     </div>
-    <div class="page-2">
+    <div class="page">
       <p> Van Gogh'un hayatı boyunca ruhsal sorunları olmuştur. Bu sorunlar, eserlerinde de kendini göstermiştir. Örneğin, "Ayçiçekleri" tablosu, Van Gogh'un ruhsal durumunun bir yansıması olarak yorumlanabilir. Tablodaki çiçekler, Van Gogh'un iç dünyasının karmaşıklığını ve tutkusunu temsil eder. </p>
       <p>Van Gogh'un ruhsal sorunları, intiharına da yol açmıştır. 27 Temmuz 1890'da, Fransa'nın Auvers-sur-Oise kasabasında kendini vurarak intihar etmiştir.</p>
       <p>Van Gogh'un intiharının nedenleri tam olarak bilinmemekle birlikte, ruhsal sorunları, maddi sıkıntıları ve kişisel hayal kırıklıkları bu kararında etkili olduğu düşünülmektedir.</p>
     </div>
-    <div class="page-3">
+    <div class="page">
       <h2>Van Gogh'un Eserleri</h2>
       <P>Van Gogh'un eserleri, canlı renkleri, cesur fırça darbeleri ve duygusal yoğunluğu ile dikkat çeker. Eserlerinde, genellikle doğa, insanlar ve günlük yaşam temalarını işlemiştir.</P>
       <P>Van Gogh'un en ünlü eserlerinden bazıları şunlardır:</P>
@@ -41,9 +42,10 @@
   
     <script>
       const root = document.body;
-      root.style.background = "#000"
-      root.style.color = "#fff"
-      const page = document.getElementById("page");
+      const page = document.getElementByclassNames("page");
+      
+      
+      page.style.background = "#9f0"
     </script>
   </body>
 </html>
