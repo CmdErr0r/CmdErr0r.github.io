@@ -1,11 +1,50 @@
-<!Docktype html>
+<!DOCTYPE html>
 <html>
   <head>
     <style>
-      *{color:#fff}
-      body{background:#000; height:100vh; margin:0}
-      .page{margin:0; display:none; z-index:-1;}
-      .active{display:block;}
+      body{background:#000; color:#f1f1f1; height:100vh; margin:0}
+      .page{margin:0; display:none; z-index:-1; background-size: contain; background-position: 50% 50%; background-repeat: no-repeat; width:100vw; height:100vh;flex-direction: column; justify-content: center;}
+      .page h2{padding-left:20px; margin:0;font-size:30px;color:#d0f}
+      .page p{
+        font-weight: 800;
+        margin:0;
+        font-family: monospace;
+        margin: 1em 0px;
+        font-size: 20px;
+      }
+      .active{display:flex;}
+      .content{
+        display: grid;
+        gap:40px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding:0 10px 0 10px;
+      }
+      
+      .talk{font-style: italic; font-weight: 200; font-family:fantasy !important;line-height: 40px;}
+      .mode-2{grid-template-columns: 1fr 1fr;}
+      .mode-0{grid-template-columns: 1fr auto;}
+      .light{}
+      .dark{}
+      .special{animation:colorchange 1s infinite}
+      .imgholder{margin:auto;}
+      @keyframes colorchange {
+        0% {
+          color:rgb(0, 255, 157);
+        }
+        50% {
+          color:#0ff;
+        }
+        100% {
+          color:rgb(0, 255, 157);
+        }
+        
+      }
+
+      /*@media screen and (max-width=1200px) {
+        .content{}
+      }*/
 
       .go{
         width:20vw;
@@ -16,92 +55,173 @@
         background:transparent;
         cursor: cell;
       }
-      #goright{right:0}
-      #goleft{left:0}
+
+      .toleft{float:left;}
+      .toright{float:right;}
+      #goright{right:0;}
+      #goleft{left:0;}
       
     </style>
   </head>
   <body>
     <div class="go" id="goleft"></div>
     <div class="go" id="goright"></div>
-    <div id="root">
+    <section id="root">
         <div class="page active">
-            <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
-            <p>Vincent van Gogh, 30 Mart 1853'te Hollanda'nın güneyinde bulunan Groot-Zundert kasabasında doğdu. Bölge papazı Theodorus van Gogh ile Anna Cornelia'nın altı çocuğundan ilkiydi. Vincent, doğumundan bir yıl önce ölü doğan kardeşinin adını almıştı.</p>
-            <p>Van Gogh çocukken ciddi, sessiz ve saygılıydı ayrıca resim de yapmaktaydı. Gençliğinde sanat simsarı olarak çalıştı ancak Londra'ya gönderildikten sonra bunalıma girdi. Döndükten sonra Belçika'nın güneyinde Protestant misyoner olarak çalıştı. Ancak bu deneyimi de başarısız oldu.</p>
-            <p>27 yaşındayken Van Gogh, ressam olmaya karar verdi. Paris'e giderek kardeşi Theo'nun yardımıyla sanat eğitimi aldı. Paris'te Empresyonist ressamlardan etkilendi ve kendi sanatını geliştirmeye başladı.</p>
-            <P>1886'da Van Gogh, Fransa'nın güneyindeki Arles şehrine taşındı. Burada, güneşi, doğayı ve insanları resmederek en üretken dönemini geçirdi. Bu dönemde, "Ayçiçekleri", "Kırmızı Üzüm Bağları" ve "Yıldızlı Gece" gibi en ünlü eserlerini yarattı.</P>
+          <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
+          <div class="content mode-2">
+            <p><span class="special">Vincent van Gogh</span>, 30 Mart 1853'te Hollanda'nın güneyinde bulunan Groot-Zundert kasabasında doğdu. Bölge papazı Theodorus van Gogh ile Anna Cornelia'nın altı çocuğundan ilkiydi. Vincent, doğumundan bir yıl önce ölü doğan kardeşinin adını almıştı.</p>
+            <p>Ailesindeki birçok kişi sanat dünyasında çalıştı. Vincent'ın iki erkek ve üç kız kardeşi vardı. Van Gogh çocukken ciddi, sessiz ve saygılıydı ayrıca resim de yapmaktaydı. Gençliğinde sanat simsarı olarak çalıştı ancak Londra'ya gönderildikten sonra bunalıma girdi. Döndükten sonra Belçika'nın güneyinde Protestant misyoner olarak çalıştı. Ancak bu deneyimi de başarısız oldu.</p>
+            <p>Genç bir çocukken çizim yapmaktan hoşlanmasına rağmen, Vincent tam zamanlı bir sanatçı olarak çalışmaya karar vermeden önce başka işler yaptı. Öğretmenlik ve din adamlığı yaptığı işlerden sadece ikisiydi. van Gogh 27 yaşlarına geldiğinde kendini tamamen sanata adamaya karar verdi.</p>
+            <p>Paris'e giderek kardeşi Theo'nun yardımıyla sanat eğitimi aldı. Paris'te Empresyonist ressamlardan etkilendi ve kendi sanatını geliştirmeye başladı.</p>
+          </div>
         </div>
+
+        <div class="page active">   
+          <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
+          <div class="content mode-2">
+            <p>Van Gogh hakkında bildiklerimizin çoğu kardeşi Theo'ya yazdığı mektuplardan geliyor. Theo Paris'te bir sanat galerisinde çalışıyordu ve Vincent'ın sanat kariyerini destekledi. Vincent'a para gönderdi ve onu resim yapması konusunda cesaretlendirdi. Theo Vincent'ın resimlerini satmaya çalıştı, ancak o dönemde kimse onları satın almak istemedi.</p>
+            <p>Vincent ilk çizmeye başladığında kalem veya kömür çubukları kullandı. Çalışkan ve fakir insanların resimlerini çizmeyi severdi. İlerleyen zamanlarda yağlı boya kullanarak resim yapmaya başladı. Kariyerinin bu ilk bölümünde, van Gogh kahverengiler ve koyu yeşiller gibi koyu renkler kullandı. Resimleri genellikle kasvetli veya üzgündü. O dönemde yaptığı en önemli resmi 'Patates Yiyenler' dir.</p>
+            <p>Theo, Vincent'a Paris'te 'İzlenimcilik' adlı yeni bir resim tarzını benimsemesi için öneride bulundu. 1886'da Vincent izlenimciliği keşfetmek için Paris'e taşındı. Ressam Claude Monet, Edgar Degas ve Camille Pissarro gibi ressamlardan etkilendi. Sanatçı Paul Gauguin ile de iyi arkadaş oldu.Bu süre zarfında van Gogh daha parlak renkler kullanmaya başladı. Paris'in sokaklarından, kafelerinden ve kırsaldan konuları boyadı. Ayrıca insanların portrelerini çizmeye başladı. Model bulamadığında, pratik yapmak için kendini resmetti. Bu süre zarfında yirminin üzerinde kendi portresini çizdi.</p>
+            <p>1886'da Van Gogh, Fransa'nın güneyindeki Arles şehrine taşındı. Burada, güneşi, doğayı ve insanları resmederek en üretken dönemini geçirdi. Bu dönemde, "Ayçiçekleri", "Kırmızı Üzüm Bağları" ve "Yıldızlı Gece" gibi en ünlü eserlerini yarattı.</p>
+          </div>
+        </div>
+
+        <div class="page active">   
+          <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
+          <div class="content mode-2">
+            <p>1888 yılında van Gogh Fransa'nın Arles şehrine taşındı. Yaşamak için sarı bir ev kiraladı ve sanatçı Paul Gauguin'i ona katılmaya davet etti. Canlı renkleri ve Arles'ın parlak güneşini sevdi.Resimlerindeki renkler daha canlı ve parlak hale geldi.</p>
+            <p>Vincent Arles'te  yüzlerce resim çizdi, bazen tek bir günde birden fazla başyapıtını boyadı. Sanata tamamen takıntılı hale geldi. Paul Gauguin, kardeşi Theo'nun teşvikiyle Van Gogh'un yanına geldi. Birlikte kaldıkları sürede birbirlerinin resimlerinden etkilendiler. Ancak iki sanatçının tartışması Gaugin'in Arles'ten ayrılmasına Van Gong'un da kulağını kesmesine sebep oldu.</p>
+            <p>1889'da van Gogh Kendine zar zor bakabiliyordu. Akıl hastanesine yatırıldı. Orada en ünlü resimlerinden olan Yıldızlı Gece tablosunu boyadı.  Bu dönemde resimlerinin çoğunda çok sayıda dönen renk vardı.</p>
+          </div>
+        </div>
+
+        <div class="page active">   
+          <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
+          <div class="content">
+            <p>  Van Goghun <span class="talk">"Çizimlerimin henüz istediğim gibi olmaması benim için devamlı bir hayal kırıklığı kaynağı oluyor. Zorluklar gerçekten de çeşitli ve büyük, ve üstesinden bir anda gelinemez gelişmek bir tür madenci işi gibidir beklendiği ve istendiği hızda ilerlemez Ama biri böyle bir görevin önünde dururken temel ihtiyaç sabır ve sadakattir Aslında zorluklar hakkında pek düşünmem Çünkü insan eğer onlara Çok fazla düşünürse ya sersemler ya da rahatsız olur."</span> sözüyle köylü ve emektar hayata olan ilgisini açıklıyor.</p>
+          </div>
+        </div>
+
         <div class="page">
-          <h2>Ayçiçekleri</h2>
-          <pre> 
-1886 yılı yaz mevsiminde yapmaya başlamıştır.
-Van Gogh arkadaşını evine davet etmiş ve yaptığı tablolardan ikisini onun odası için ayırmıştır.
-Van Gogh arkadaşı olan Gauguin’ i arkadaşının Brittany’ den gelmeye ikna etmenin bir yolu olarak görmüştür.
-Ulusal galeride sergilenen orijinal resimdeki belirgin mavi ana hatlar, çalışmaları, emaye işi ya da vitraydaki düz renkleri ayıran dar bantları anımsatan benzer bir düzeneği zaten kullanan Gauguin’e bir tür saygı olarak anlaşılabilir.
-Van Gogh Arles’ te bulunan evini ayçiçeği resmi ile dekore ederek Gauguin’ e haklı olduğu kanıtlamaya çalışmıştır.
-          </pre>
-          <pre>
-Sarı renk Van Gogh için mutluluğun simgesiydi.
-Hollanda edebiyatında ayçiçeği bağlılık ve sadakatin simgesidir.
-Bu çiçekler çeşitli çürüme evrelerinde yaşam ve ölüm döngüsünü de hatırlatır.
-Vincent Van Gogh Ayçiçekleri’ nin iki versiyonunu, rahatlatıcı anne figürüne bir saygı duruşu olarak yaptığı portre olan Beşiği Sallaya Kadın ile birleştirmek istedi.
-Birlikte resimler bir triptik oluşturacaktı. İki Ayçiçeği, portrenin renklerini yoğunlaştıracak sarı panellerdi.
-Vincent, üçlünün bir bütün olarak minnettarlığı simgelediğini düşündü.
-          </pre>
+          <h2>Ayçiçekleri (1888)</h2>
+          <div class="content mode-0">
+            <div>
+              <p> 1886 yılı yaz mevsiminde yapmaya başlamıştır.</p>
+              <p> Van Gogh arkadaşını evine davet etmiş ve yaptığı tablolardan ikisini onun odası için ayırmıştır.
+              Van Gogh arkadaşı olan Gauguin’ i arkadaşının Brittany’ den gelmeye ikna etmenin bir yolu olarak görmüştür.
+              Ulusal galeride sergilenen orijinal resimdeki belirgin mavi ana hatlar, çalışmaları, emaye işi ya da vitraydaki düz renkleri ayıran dar bantları anımsatan benzer bir düzeneği zaten kullanan Gauguin’e bir tür saygı olarak anlaşılabilir.
+              Van Gogh Arles’ te bulunan evini ayçiçeği resmi ile dekore ederek Gauguin’ e haklı olduğu kanıtlamaya çalışmıştır.</p>
+              <p> Sarı renk Van Gogh için mutluluğun simgesiydi. Hollanda edebiyatında ayçiçeği bağlılık ve sadakatin simgesidir.</p>
+              <p> Bu çiçekler çeşitli çürüme evrelerinde yaşam ve ölüm döngüsünü de hatırlatır. </p>
+              <p> Vincent Van Gogh Ayçiçekleri’ nin iki versiyonunu, rahatlatıcı anne figürüne bir saygı duruşu olarak yaptığı portre olan Beşiği Sallaya Kadın ile birleştirmek istedi.</p>
+              <p> Birlikte resimler bir triptik oluşturacaktı. İki Ayçiçeği, portrenin renklerini yoğunlaştıracak sarı panellerdi. </p>
+              <p> incent, üçlünün bir bütün olarak minnettarlığı simgelediğini düşündü. </p>
+            </div>
+            <div class="imgholder">
+              <img src="src/page1.png" width="300px"/>
+            </div>
+          </div>
         </div>
+
         <div class="page">
-          <h2>Kırmızı Üzüm Bağları</h2>
-          <pre> 
-Kırmızı Üzüm Bağı Hollandalı ressam Vincent Van Gogh tarafından Kasım 1888'in başlarında yapılmış bir yağlı boya tablosudur.
-Bu eserin, sanatçının hayattayken satabildiği tek resim olduğu düşünülmektedir.
-          </pre>
+          <h2>Kırmızı Üzüm Bağları (1888)</h2>
+          <div class="content">
+            <div>
+              <p> Kırmızı Üzüm Bağı Hollandalı ressam Vincent Van Gogh tarafından Kasım 1888'in başlarında yapılmış bir yağlı boya tablosudur. </p>
+              <p> Bu eserin, sanatçının hayattayken satabildiği tek resim olduğu düşünülmektedir. </p>
+            </div>
+            <div class="imgholder">
+              <img src="src/page2.png" width="300px"/>
+            </div>
+          </div>
         </div>
+        
         <div class="page">
-          <h2>Yıldızlı gece</h2>
-          <pre> 
-Haziran 1889'da yaptığı tabloda ressam, sanatoryumdaki odasının doğuya bakan pencereden görünen Saint-Rémy-de-Provence köyünün gün doğuşundan hemen önceki görünüşünü resmetmiştir.
-Tablo, 1941 yılından beri New York'taki Museum of Modern Art müzesinin kalıcı koleksiyonunda bulunmaktadır.
-Van Gogh'un en ünlü eserleriden biri olan Yıldızlı Gece, aynı zamanda Batı kültürünün en ünlü tablolarından biridir.
-          </pre>
+          <h2>Yıldızlı gece (1889)</h2>
+          <div class="content">
+            <div>
+              <p> Haziran 1889'da yaptığı tabloda ressam, sanatoryumdaki odasının doğuya bakan pencereden görünen Saint-Rémy-de-Provence köyünün gün doğuşundan hemen önceki görünüşünü resmetmiştir.</p>
+              <p> Tablo, 1941 yılından beri New York'taki Museum of Modern Art müzesinin kalıcı koleksiyonunda bulunmaktadır.</p>
+              <p> Van Gogh'un en ünlü eserleriden biri olan Yıldızlı Gece, aynı zamanda Batı kültürünün en ünlü tablolarından biridir.</p>
+            </div>
+            <div class="imgholder">
+              <img src="src/page3.png" width="300px"/>
+            </div>
+          </div>
         </div>
+        
         <div class="page">
-          <p> Van Gogh'un hayatı boyunca ruhsal sorunları olmuştur. Bu sorunlar, eserlerinde de kendini göstermiştir. Örneğin, "Ayçiçekleri" tablosu, Van Gogh'un ruhsal durumunun bir yansıması olarak yorumlanabilir. Tablodaki çiçekler, Van Gogh'un iç dünyasının karmaşıklığını ve tutkusunu temsil eder. </p>
-          <p>Van Gogh'un ruhsal sorunları, intiharına da yol açmıştır. 27 Temmuz 1890'da, Fransa'nın Auvers-sur-Oise kasabasında kendini vurarak intihar etmiştir.</p>
-          <p>Van Gogh'un intiharının nedenleri tam olarak bilinmemekle birlikte, ruhsal sorunları, maddi sıkıntıları ve kişisel hayal kırıklıkları bu kararında etkili olduğu düşünülmektedir.</p>
+          <h2>Patates Yiyenler (1885)</h2>
+          <div class="content mode-0">
+            <div>
+              <p>Patates Yiyenler Vincent Van Gogh’un 1885 tarihinde tamamladığı kasvetli ve iç karartıcı dönemi simgeleyen ünlü bir tablo.</p>
+              <p>Resmin geneline hakim olan renk yabani patates rengi. Bu tozlu patates renginin anlamı ise derin çünkü işçilerin ürettikleri o patates aynı zamanda onları bu karanlığa gömen bir sömürü aracı. Resmin kasvetli ve karanlık bir görünümü var ve insanların yüzleri, yoksulluğu melankolik bir atmosfer ile canlandırıyor.</p>
+            </div>
+            <div class="imgholder">
+              <img src="src/page4.png" width="300px"/>
+            </div>
+          </div>
         </div>
+        
         <div class="page">
-          <h2>Van Gogh'un Eserleri</h2>
-          <P>Van Gogh'un eserleri, canlı renkleri, cesur fırça darbeleri ve duygusal yoğunluğu ile dikkat çeker. Eserlerinde, genellikle doğa, insanlar ve günlük yaşam temalarını işlemiştir.</P>
-          <P>Van Gogh'un en ünlü eserlerinden bazıları şunlardır:</P>
-          <ul>
-            <li>Ayçiçekleri (1888)</li>
-            <li>Kırmızı Üzüm Bağları (1888)</li>
-            <li>Yıldızlı Gece (1889)</li>
-            <li>Patates Yiyenler (1885)</li>
-            <li>Odadaki Arlesli Yatak (1888)</li>
-            <li>Çiftçiler (1889)</li>
-            <li>Kahvehane (1888)</li>
-            <li>Buğday Tarlasında Yürüyen Çiftçiler (1890)</li>
-            <li>Köylü Kadın (1889)</li>
-          </ul>
+          <h2>Odadaki Arlesli Yatak (1888)</h2>
+          <div class="content mode-0">
+            <div>
+              <p>Van Gogh, Arles'taki evine taşındıktan sonra dönemin ressamlarından Paul Gauguin ile birlikte çalışmak ve ortak paylaşımlarda bulunmak için onu buraya davet eder. Ressam, misafirini beklerken uygun ortam hazırlamak ve kendi resim yeteneğini göstermek için odayı, yaptığı çalışmalarla süsler. Eserde duvarlarda görülen tablolar da bu süreçte yapılmıştır</p>
+              <p>Sandalyeler, yastıklar ve duvardaki tabloların çiftler halinde oluşu tabloya huzur, düzen ve barış duygusu vermek için yardımcı olur. Tema her ne olursa olsun Arles ve Saint-Rémy dönemleri boyunca Van Gogh'un en sevdiği ve sıklıkla kullandığı renk sarıydı. Bu tabloda da kullanılan esas renk sarıdır. Resmin en dikkat çekici ve çarpıcı yanı, ilginç bir perspektife sahip olmasıdır. Alışılmışın dışında orantısız boyutlarda yamuk şekilde betimlenen odanın ölçülerinde sıra dışı bir derinlik yanılgısı göze çarpıyor.</p>
+              <p>Van Gogh davetine icabet eden Gaugin ile yaklaşık iki ay birlikte yaşayıp çalışmalar yaptılar. Lakin bu ortak çalışmalar yaptıkları bir tartışma sonucu Van Gogh'un (kendi) kulağını kesmesi ve Saint Rémy'de bir akıl hastanesine kaldırılmasıyla son buldu. Hastaneedyken tablonun su baskını yüzünden hasar gördüğünü öğrenen sanatçı 1889 yılının Eylül ayında eserin aynı boyutlarda ikinci bir versiyonunu yaptı.</p>
+            </div>
+            <div class="imgholder">
+              <img src="src/page5.png" width="300px"/>
+            </div>
+          </div>
         </div>
+        
         <div class="page">
-            <P>Van Gogh'un hayatı, ruhsal sorunları ve maddi sıkıntılar nedeniyle oldukça çalkantılıydı. 27 Temmuz 1890'da, Fransa'nın Auvers-sur-Oise kasabasında kendini vurarak intihar etti.</P>
-            <P>Van Gogh, yaşamı boyunca sadece bir tablosunu satabildi. Ancak ölümünden sonra, eserleri dünya çapında büyük bir üne kavuştu. Bugün, Van Gogh, modern sanatın en önemli isimlerinden biri olarak kabul edilmektedir.</P>
+          <h2>Çiftçiler (1889)</h2>
+          <div class="content mode-0">
+            <div>
+              <p>Resim 1888'de yapıldı ve Provençal bir köylü olan Patience Escalier'i tasvir ediyor. Van Gogh köylüler konusuna ilgi duydu çünkü onları işçi sınıfını ve basit yaşamı temsil ediyor olarak görüyordu. Ayrıca onların gücüne ve dayanıklılığına da hayran kaldı.</p>
+              <p>Tablo cesur ve canlı renkleriyle dikkat çekiyor. Van Gogh enerji ve yaşam duygusu yaratmak için sarı, mavi, yeşil ve kırmızı gibi çeşitli tonları kullandı. Ayrıca dokulu ve etkileyici bir yüzey oluşturmak için kalın fırça darbeleri kullandı. Köylü, Sabrın Portresi Escalier, Van Gogh'un en ikonik tablolarından biridir. Bu, işçi sınıfından bir adamın güçlü ve dokunaklı bir tasviridir ve Van Gogh'un ressam olarak becerisinin ve insanlığa olan şefkatinin bir kanıtıdır.</p>
+            </div>
+            <div class="imgholder">
+              <img src="src/page6.png" width="300px"/>
+            </div>
+          </div>
         </div>
+        
         <div class="page">
-          <h2>Kaynakça</h2>
-          <ul>
-            <li>tablohane.com</li>  
-          </ul>
-          
+          <h2>Geceleri Kafe Terası (1888)</h2>
+          <div class="content mode-0">
+            <div>
+              <p>Tabloda, Arles'teki Place du Forum'da bulunan bir kafenin gece görünümü tasvir edilmektedir. Kafenin terası, masalar ve sandalyelerle doludur ve müşteriler kahvelerini ve içkilerini içerek sohbet etmektedir. Arka planda, Arles'in ünlü Saint-Trophime Katedrali görülmektedir.</p>
+              <p>Van Gogh, tabloda canlı ve parlak renkleri kullanarak gecenin atmosferini yakalamıştır. Kırmızı, sarı ve yeşil gibi renkler, tabloya enerji ve hareketlilik kazandırmaktadır. Van Gogh ayrıca, kalın fırça darbeleri kullanarak tabloya doku ve ifade katmıştır.</p>
+              <p>"Cafe Terrace at Night" tablosu, Van Gogh'un Post Empresyonist sanat anlayışının en iyi örneklerinden biridir. Tablo, Van Gogh'un renk ve ışık kullanımıyla birlikte, gerçekçiliği ve duygusallığı bir arada sunmasıyla dikkat çekmektedir.</p>
+            </div>
+            <div class="imgholder">
+              <img src="src/page7.png" width="300px"/>
+            </div>
+          </div>
         </div>
-      </div>
+        
+        <div class="page">
+          <div>
+            <p>Van Gogh'un hayatı boyunca ruhsal sorunları olmuştur. Bu sorunlar, eserlerinde de kendini göstermiştir. Örneğin, "Ayçiçekleri" tablosu, Van Gogh'un ruhsal durumunun bir yansıması olarak yorumlanabilir. Tablodaki çiçekler, Van Gogh'un iç dünyasının karmaşıklığını ve tutkusunu temsil eder. </p>
+            <p>Van Gogh'un ruhsal sorunları, intiharına da yol açmıştır. 27 Temmuz 1890'da, Fransa'nın Auvers-sur-Oise kasabasında kendini vurarak intihar veya suikastile yaklaşık 10 yıllık sanat hayatı sona ermiştir.</p>
+            <p>Van Gogh'un intiharının nedenleri tam olarak bilinmemekle birlikte, ruhsal sorunları, maddi sıkıntıları ve kişisel hayal kırıklıkları bu kararında etkili olduğu düşünülmektedir.</p>
+            <P>Van Gogh, 860'ı tablo olan 2100 eser bırakan sanatçı, yaşamı boyunca tek bir çalışmasını satabildi. Ancak ölümünden sonra, eserleri dünya çapında büyük bir üne kavuştu. Bugün, Van Gogh, modern sanatın en önemli isimlerinden biri olarak kabul edilmektedir.</P>
+            <p>sanat h </p>
+          </div>
+        </div>
+
+      </section>
       <script>
         const root = document.getElementById("root");
+        const page = document.querySelectorAll(".page");
         const goLeft = document.getElementById("goleft");
         const goRight = document.getElementById("goright");
+        const special = document.querySelectorAll(".special");
         let index = 0;
         
         function addEdition(num) {
@@ -120,7 +240,11 @@ Van Gogh'un en ünlü eserleriden biri olan Yıldızlı Gece, aynı zamanda Bat�
         goLeft.addEventListener("click", () => {addEdition(-1);});
         goRight.addEventListener("click", () => {addEdition(1);});
 
-        for 
+        /*
+        page.forEach((e, i) => {
+          e.style.backgroundImage = `url("src/page${i}.png")`;
+        });
+        */
       </script>
   </body>
 </html>
