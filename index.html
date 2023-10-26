@@ -67,7 +67,7 @@
     <div class="go" id="goleft"></div>
     <div class="go" id="goright"></div>
     <section id="root">
-        <div class="page active">
+        <div class="page">
           <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
           <div class="content mode-2">
             <p><span class="special">Vincent van Gogh</span>, 30 Mart 1853'te Hollanda'nın güneyinde bulunan Groot-Zundert kasabasında doğdu. Bölge papazı Theodorus van Gogh ile Anna Cornelia'nın altı çocuğundan ilkiydi. Vincent, doğumundan bir yıl önce ölü doğan kardeşinin adını almıştı.</p>
@@ -77,7 +77,7 @@
           </div>
         </div>
 
-        <div class="page active">   
+        <div class="page">   
           <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
           <div class="content mode-2">
             <p>Van Gogh hakkında bildiklerimizin çoğu kardeşi Theo'ya yazdığı mektuplardan geliyor. Theo Paris'te bir sanat galerisinde çalışıyordu ve Vincent'ın sanat kariyerini destekledi. Vincent'a para gönderdi ve onu resim yapması konusunda cesaretlendirdi. Theo Vincent'ın resimlerini satmaya çalıştı, ancak o dönemde kimse onları satın almak istemedi.</p>
@@ -87,7 +87,7 @@
           </div>
         </div>
 
-        <div class="page active">   
+        <div class="page">   
           <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
           <div class="content mode-2">
             <p>1888 yılında van Gogh Fransa'nın Arles şehrine taşındı. Yaşamak için sarı bir ev kiraladı ve sanatçı Paul Gauguin'i ona katılmaya davet etti. Canlı renkleri ve Arles'ın parlak güneşini sevdi.Resimlerindeki renkler daha canlı ve parlak hale geldi.</p>
@@ -96,7 +96,7 @@
           </div>
         </div>
 
-        <div class="page active">   
+        <div class="page">   
           <h2>Vincent van Gogh: Bir Yaşam, Bir Sanat</h2>
           <div class="content">
             <p>  Van Goghun <span class="talk">"Çizimlerimin henüz istediğim gibi olmaması benim için devamlı bir hayal kırıklığı kaynağı oluyor. Zorluklar gerçekten de çeşitli ve büyük, ve üstesinden bir anda gelinemez gelişmek bir tür madenci işi gibidir beklendiği ve istendiği hızda ilerlemez Ama biri böyle bir görevin önünde dururken temel ihtiyaç sabır ve sadakattir Aslında zorluklar hakkında pek düşünmem Çünkü insan eğer onlara Çok fazla düşünürse ya sersemler ya da rahatsız olur."</span> sözüyle köylü ve emektar hayata olan ilgisini açıklıyor.</p>
@@ -221,6 +221,7 @@
         const goRight = document.getElementById("goright");
         const special = document.querySelectorAll(".special");
         let index = 0;
+        root.children[index].classList.add("active");
         
         function addEdition(num) {
           root.children[index].classList.remove("active");
